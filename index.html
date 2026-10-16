@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="موقع الرواية - اقرأ عن العالم والشخصيات، وانتقل إلى صفحة التحميل.">
+  <title>القس المجنون</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">RAPOL <span>YT</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">القائمة ☰</button>
+      <nav class="nav-links" id="main-nav">
+        <a class="nav-link active" href="index.html">الرئيسية</a>
+        <a class="nav-link" href="#about">عن الرواية</a>
+        <a class="nav-link" href="#works">الروابط</a>
+        <a class="nav-link" href="download.html">تحميل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">رواية أعيد تنظيمها وكتابتها مع المانجا </div>
+          <h1>القس <span>المجنون</span><br> </h1>
+          <p class="hero-copy">قمت بجمعها و تصحيح بعض الاخطاء وتنظيمها لتكون مريحة في القراءة رابط مباشر للتحميل . شكل جديد . القصة الاصلية...... و كل ذلك في مكان واحد!!! </p>
+          <div class="hero-actions">
+            <a class="btn" href="new\index.html">حدث الموقع!!</a>
+            <a class="btn btn-outline" href="#about">ما الجديد في هذه النسخة </a>
+          </div>
+        </div>
+        
+          <div class="book-mark"><strong><br></strong><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">عن الرواية</div>
+          <h2>ما <span>الجديد ؟</span></h2>
+          <p>قمت اعادة تنضيم الرواية لتكون مريحة في القراءة . اعادة الكتابة بخط جميل . كل الروابط في مكان واحد . توضيح الفصول و العناوين ...و غيرها
+
+                يمكنك معاينة التغيرات و اخبارنا برايك </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon">⩥</div>
+            <h3>دعم مسمر</h3>
+            <p>اي خطأ او اخبار سيتم مواكبتها في وقت قياسي</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">⋄</div>
+            <h3>شخصيات مميزة</h3>
+            <p>فانغ يوان ....قصة شخص عاش 300 سنة من العذاب و 200 سنة كشيطان!!!</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">↧</div>
+            <h3>روابط واضحة</h3>
+            <p>كل شيء عن الرواية في مكان واحد و تحميل مباشر</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section works" id="works">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">روابط </div>
+          <h2> القس <span>المجنون ...</span></h2>
+          <p>كل الروابط</p>
+        </div>
+        <div class="works-grid">
+          <article class="work-card">
+            
+            <div class="work-body">
+              <h3>قناتي اليوتيوب</h3>
+              <p>ادعمني معنويا ..</p>
+              <a class="btn" href="https://www.youtube.com/@RAPOL-YT">زيارة القناة</a>
+            </div>
+          </article>
+          <article class="work-card">
+            
+            <div class="work-body">
+              <h3>تحميل</h3>
+              <p>حمل الفصول مباشرة</p>
+              <a class="btn" href="download.html">تحميل الان</a>
+            </div>
+          </article>
+          <article class="work-card">
+            
+            <div class="work-body">
+              <h3>حدث الموقع</h3>
+              <p>شكل جديد للموقع ..</p>
+              <a class="btn" href="new\index.html">جرب</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>هل أنت مستعد للدخول إلى عالم الرواية؟</h2>
+        <p>يتوفر شكل جديد للموقع</p>
+        <a class="btn" href="new\index.html">حدث الموقع!!</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="logo" href="index.html">RAPOL <span>YT</span></a>
+      <p>© <span id="year"></span>RAPOL YT — جميع الحقوق محفوظة.</p>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↺</a>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const opened = nav.classList.toggle('show');
+      menuButton.setAttribute('aria-expanded', String(opened));
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

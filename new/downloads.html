@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>مكتبة التحميلات</title>
+
+    <!-- =====================================================
+         الخط
+         ===================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ملف التصميم الرئيسي
+         ===================================================== -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!--
+        سنضيف لاحقاً:
+        downloads.css
+
+        إذا احتجنا إلى تصميم خاص بصفحة التنزيلات.
+    -->
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- الشعار -->
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                RAPOL<span>YT</span>
+            </a>
+
+
+            <!-- روابط الموقع -->
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    الرئيسية
+                </a>
+
+                <a href="index.html#about">
+                    عن الرواية
+                </a>
+
+                <a href="index.html#works">
+                    اخبار ...قادم قريبا!!
+                </a>
+
+                <a
+                    href="downloads.html"
+                    class="active"
+                >
+                   تحميل
+                </a>
+
+            </nav>
+
+
+            <!-- الحساب -->
+
+            <div class="nav-account">
+
+                <a
+                    href="https://www.youtube.com/@RAPOL-YT"
+                    class="login-btn"
+                >
+                    قناتي اليوتيوب
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@RAPOL-YT"
+                    class="register-btn"
+                >
+                    المزيد عني
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             مقدمة صفحة التنزيلات
+             ================================================= -->
+
+        <section class="hero downloads-hero">
+
+            <div class="hero-container">
+
+
+                <div class="hero-content">
+
+                    <span class="small-title">
+                        مكتبة الرواية
+                    </span>
+
+
+                    <h1>
+
+                        التنزيلات
+
+                        <span>
+                            والملفات
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        من هنا يمكنك الوصول إلى مختلف الملفات
+                        والإصدارات والمواد المتعلقة بالرواية.
+
+                    </p>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <!--
+                        =================================================
+                        صورة صفحة التنزيلات
+
+                        غيّر رابط الصورة هنا.
+
+                        لا تحتاج إلى وضع الصورة داخل المشروع.
+                        =================================================
+                    -->
+
+                    <img
+                        src="src\4.png"
+                        alt="التنزيلات"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             قسم التنزيلات
+             ================================================= -->
+
+        <section class="downloads-section">
+
+            <div class="downloads-container">
+
+
+                <!-- =================================================
+                     القسم الأول
+                     ================================================= -->
+
+                <div
+                    class="download-category"
+                    data-category="category-1"
+                >
+
+
+                    <!-- الزر الرئيسي -->
+
+                    <button
+                        type="button"
+                        class="download-category-btn"
+                        data-category-toggle
+                    >
+
+                        <span>
+
+                            المجلد الاول  -  طبيعة الشياطين لا تتغير
+
+                        </span>
+
+
+                        <span class="category-icon">
+                            +
+                        </span>
+
+                    </button>
+
+
+                    <!-- =================================================
+                         التنزيلات الأربعة
+
+                         هذه المنطقة ستفتح وتغلق بالـ JavaScript.
+                         ================================================= -->
+
+                    <div class="download-items">
+
+
+                        <!-- =================================================
+                             التنزيل 1
+                             ================================================= -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-001"
+                        >
+
+                            <!--
+                                صورة التنزيل
+
+                                غيّر رابط الصورة هنا.
+                            -->
+
+                            <img
+                                src="src\9.png"
+                                alt="التنزيل الأول"
+                            >
+
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    01
+                                </span>
+
+
+                                <!-- غيّر اسم التنزيل هنا -->
+
+                                <h3>
+                                    الفصول من 1 -50
+                                </h3>
+
+
+                                <!-- غيّر الوصف هنا -->
+
+                                <p>
+                                     جاهز للتحميل
+                                </p>
+
+
+                                <!--
+                                    =================================================
+                                    غيّر رابط التنزيل هنا
+
+                                    ضع الرابط الحقيقي بدلاً من:
+                                    https://example.com/download-1
+                                    =================================================
+                                -->
+
+                                <a
+                                    href="https://drive.google.com/file/d/1Z8sAUpYwuu1qTPYUvBRsYpDA5G7PzhvZ/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+
+                                <!-- زر المفضلة -->
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================================
+                             التنزيل 2
+                             ================================================= -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-002"
+                        >
+
+                            <img
+                                src="src\9.png"
+                                alt="التنزيل الثاني"
+                            >
+
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    02
+                                </span>
+
+                                <h3>
+                                    الفصول من 51 - 100
+                                </h3>
+
+                                <p>
+                                   جاهز للتحميل
+                                </p>
+
+
+                                <a
+                                    href="https://drive.google.com/file/d/1Iz08HqBQ34H7C0-_aGaA3GCUNZsVj2c7/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================================
+                             التنزيل 3
+                             ================================================= -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-003"
+                        >
+
+                            <img
+                                src="src\13.png"
+                                alt="التنزيل الثالث"
+                            >
+
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    03
+                                </span>
+
+                                <h3>
+                                    الفصول من 101 - 150 
+                                </h3>
+
+                                <p>
+                                    غيّر متوفر 
+                                </p>
+
+
+                                <a
+                                    href=".........."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                   غيّر متوفر 
+                                </a>
+
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================================
+                             التنزيل 4
+                             ================================================= -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-004"
+                        >
+
+                            <img
+                                src="src\13.png"
+                                alt="التنزيل الرابع"
+                            >
+
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    04
+                                </span>
+
+                                <h3>
+                                  الفصول من 151 - 199
+                                </h3>
+
+                                <p>
+                                   غيّر متوفر 
+                                </p>
+
+
+                                <a
+                                    href="................."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    غيّر متوفر 
+                                </a>
+
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     القسم الثاني
+                     ================================================= -->
+
+                <div
+                    class="download-category"
+                    data-category="category-2"
+                >
+
+
+                    <button
+                        type="button"
+                        class="download-category-btn"
+                        data-category-toggle
+                    >
+
+                        <span>
+                           المجلدات الأصلية - 1000 فصل كلها معربة !!
+                        </span>
+
+                        <span class="category-icon">
+                            +
+                        </span>
+
+                    </button>
+
+
+                    <div class="download-items">
+
+
+                        <!-- التنزيل 1 -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-005"
+                        >
+
+                            <img
+                                src="src\14.png"
+                                alt="التنزيل الخامس"
+                            >
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    01
+                                </span>
+
+                                <h3>
+                                   المجلد الاول - طبيعة الشياطين لا تتغير
+                                </h3>
+
+                                <p>
+                                    الملف معرب 
+                                </p>
+
+                                <a
+                                    href="https://drive.google.com/file/d/1du4O9vX-_McKTIN1qhwzQG5FpqnYJHbx/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- التنزيل 2 -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-006"
+                        >
+
+                            <img
+                                src="src\14.png"
+                                alt="التنزيل السادس"
+                            >
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    02
+                                </span>
+
+                                <h3>
+                                   المجلد الثاني - الشيطان يغادر الجبل
+                                </h3>
+
+                                <p>
+                                    الملف معرب 
+                                </p>
+
+                                <a
+                                    href="https://drive.google.com/file/d/1eSCG_Z-qa1M7GWn_F3skQawcQ44rSmyd/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- التنزيل 3 -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-007"
+                        >
+
+                            <img
+                                src="src\14.png"
+                                alt="التنزيل السابع"
+                            >
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    03
+                                </span>
+
+                                <h3>
+                                    المجلد الثالث - الشيطان ينشر الفوضى في العالم
+                                </h3>
+
+                                <p>
+                                   الملف معرب 
+                                </p>
+
+                                <a
+                                    href="https://drive.google.com/file/d/1cK0g-4qUEx4squvNLlNVCg_JbyO4Y385/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                    
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- التنزيل 4 -->
+
+                        <article
+                            class="download-card"
+                            data-download-id="download-008"
+                        >
+
+                            <img
+                                src="src\14.png"
+                                alt="التنزيل الثامن"
+                            >
+
+                            <div class="download-info">
+
+                                <span class="download-number">
+                                    04
+                                </span>
+
+                                <h3>
+                                    المجلد الرابع - هيجان سيد الشياطين دون رادع
+                                </h3>
+
+                                <p>
+                                    الملف معرب 
+                                </p>
+
+                                <a
+                                    href="https://drive.google.com/file/d/1zRRwx3WCPPWuYU_BpPvsqkxTljRmm3ly/view?usp=drive_link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="download-btn"
+                                >
+                                    تنزيل
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="favorite-btn"
+                                    data-favorite-button
+                                >
+                                   
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+
+
+              
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+             ================================================= -->
+
+        <section class="final-section">
+
+            <div class="final-container">
+
+                <span class="section-label">
+                    RAPOL YT
+                </span>
+
+                <h2>
+                    استكشف المزيد
+                </h2>
+
+                <p>
+                    يمكنك العودة إلى الصفحة الرئيسية لاستكشاف
+                    تفاصيل الرواية والأعمال المرتبطة بها.
+                </p>
+
+                <a
+                    href="index.html"
+                    class="primary-btn"
+                >
+                    العودة للرئيسية
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+                RAPOL<span>YT</span>
+            </div>
+
+            <p>
+                موقع لمجتمع القس المجنون
+            </p>
+
+            <p class="copyright">
+               © 2026 RAPOL YT. جميع الحقوق محفوظة.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JavaScript
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	<script src="js/supabase.js"></script>
+	<script src="js/downloads.js"></script>
+	
+
+</body>
+
+</html>
+

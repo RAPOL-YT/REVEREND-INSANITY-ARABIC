@@ -1,0 +1,2142 @@
+
+/* =========================================================
+   GHOST NOVEL
+   الملف: css/style.css
+
+   الصفحات:
+   - index.html
+   - downloads.html
+   - login.html
+   - register.html
+
+   الألوان:
+   الأبيض = الخلفية
+   الأسود = النصوص
+   الأحمر = التفاصيل والأزرار
+   ========================================================= */
+
+
+/* =========================================================
+   1. المتغيرات
+   ========================================================= */
+
+:root {
+    --white: #ffffff;
+    --black: #111111;
+    --dark: #080808;
+
+    --red: #e3262e;
+    --red-dark: #b9141b;
+
+    --gray: #666666;
+    --light-gray: #f5f5f5;
+    --border: #e8e8e8;
+
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+    --radius: 22px;
+
+    --container: 1200px;
+}
+
+
+/* =========================================================
+   2. الإعدادات العامة
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Noto Kufi Arabic", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(227, 38, 46, 0.05),
+            transparent 30%
+        ),
+        #ffffff;
+
+    color: var(--black);
+
+    line-height: 1.9;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   3. الحاويات العامة
+   ========================================================= */
+
+.nav-container,
+.hero-container,
+.section-container,
+.section-heading,
+.works-grid,
+.final-container,
+.footer-container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   4. شريط التنقل
+   ========================================================= */
+
+.navbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+    backdrop-filter: blur(18px);
+}
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* الشعار */
+
+.logo {
+    font-size: 27px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--red);
+}
+
+
+/* روابط التنقل */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #444444;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--red);
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   5. أزرار الحساب في Navbar
+   ========================================================= */
+
+.nav-account {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.login-btn,
+.register-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding: 0 17px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.login-btn {
+    border: 1px solid var(--border);
+
+    background: var(--white);
+
+    color: var(--black);
+}
+
+.login-btn:hover {
+    border-color: var(--black);
+
+    transform: translateY(-2px);
+}
+
+.register-btn {
+    background: var(--red);
+
+    color: var(--white);
+}
+
+.register-btn:hover {
+    background: var(--red-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(227, 38, 46, 0.22);
+}
+
+
+/* =========================================================
+   6. الصفحة الرئيسية - Hero
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    padding: 90px 0 100px;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -200px;
+
+    background: rgba(227, 38, 46, 0.06);
+
+    border-radius: 50%;
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* نص Hero */
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title,
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(42px, 6vw, 78px);
+
+    line-height: 1.25;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--red);
+}
+
+.hero p {
+    max-width: 620px;
+
+    margin-bottom: 32px;
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    line-height: 2.2;
+}
+
+
+/* أزرار Hero */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.primary-btn {
+    background: var(--red);
+
+    color: var(--white);
+
+    box-shadow:
+        0 12px 25px rgba(227, 38, 46, 0.17);
+}
+
+.primary-btn:hover {
+    background: var(--red-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(227, 38, 46, 0.25);
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+
+    background: var(--white);
+
+    color: var(--black);
+}
+
+.secondary-btn:hover {
+    border-color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+
+/* صورة Hero */
+
+.hero-image {
+    position: relative;
+
+    max-width: 500px;
+
+    margin-inline: auto;
+}
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 20px -20px -20px 20px;
+
+    background: var(--red);
+
+    border-radius: var(--radius);
+
+    opacity: 0.12;
+
+    z-index: 0;
+}
+
+.hero-image img {
+    position: relative;
+
+    z-index: 1;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.4s ease;
+}
+
+.hero-image:hover img {
+    transform: translateY(-7px) rotate(1deg);
+}
+
+
+/* =========================================================
+   7. قسم عن الرواية
+   ========================================================= */
+
+.about-section {
+    padding: 110px 0;
+
+    background: #fafafa;
+}
+
+.section-container {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+.section-image {
+    position: relative;
+}
+
+.section-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    left: -15px;
+    bottom: -15px;
+
+    border-left: 4px solid var(--red);
+
+    border-bottom: 4px solid var(--red);
+
+    border-radius: 0 0 0 10px;
+
+    z-index: 2;
+}
+
+.section-image img {
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.section-content h2,
+.visual-content h2,
+.section-heading h2,
+.final-container h2 {
+    margin-bottom: 22px;
+
+    font-size: clamp(28px, 4vw, 45px);
+
+    line-height: 1.45;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.section-content p,
+.visual-content p {
+    margin-bottom: 17px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 2.2;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--red);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    transition: 0.25s ease;
+}
+
+.text-link:hover {
+    transform: translateX(-5px);
+}
+
+
+/* =========================================================
+   8. القسم البصري
+   ========================================================= */
+
+.visual-section {
+    padding: 110px 0;
+}
+
+.visual-content {
+    order: 1;
+}
+
+.visual-image {
+    order: 2;
+
+    position: relative;
+}
+
+.visual-image img {
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+.visual-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -20px;
+    right: -20px;
+
+    border-top: 4px solid var(--red);
+
+    border-right: 4px solid var(--red);
+
+    border-radius: 0 10px 0 0;
+}
+
+
+/* =========================================================
+   9. قسم الأعمال
+   ========================================================= */
+
+.works-section {
+    padding: 110px 0;
+
+    background: #fafafa;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.section-heading p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+.works-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* بطاقة العمل */
+
+.work-card {
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.035);
+
+    transition: 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+.work-card > img {
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+.work-card:hover > img {
+    transform: scale(1.04);
+}
+
+.work-content {
+    padding: 25px;
+}
+
+.work-number {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+.work-content h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.work-content p {
+    min-height: 55px;
+
+    margin-bottom: 20px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+.card-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.card-btn:hover {
+    background: var(--red);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   10. القسم الأخير
+   ========================================================= */
+
+.final-section {
+    padding: 110px 0;
+}
+
+.final-container {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 75px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(227, 38, 46, 0.12),
+            transparent 35%
+        ),
+        #111111;
+
+    color: var(--white);
+}
+
+.final-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    bottom: -130px;
+    left: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(227, 38, 46, 0.15);
+}
+
+.final-container .section-label,
+.final-container h2,
+.final-container p,
+.final-container .primary-btn {
+    position: relative;
+}
+
+.final-container h2 {
+    margin-bottom: 15px;
+}
+
+.final-container p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #bbbbbb;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   11. Footer
+   ========================================================= */
+
+.footer {
+    padding: 50px 0 35px;
+
+    background: #080808;
+
+    color: white;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+.footer p {
+    color: #888888;
+
+    font-size: 11px;
+}
+
+.footer .copyright {
+    margin-top: 20px;
+
+    color: #555555;
+}
+
+
+/* =========================================================
+   12. التحديد و Scrollbar
+   ========================================================= */
+
+::selection {
+    background: var(--red);
+
+    color: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9c9c9;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
+}
+
+
+/* =========================================================
+   13. صفحة التنزيلات
+   ========================================================= */
+
+.downloads-section {
+    padding: 100px 0;
+
+    background: #fafafa;
+}
+
+.downloads-container {
+    width: min(
+        calc(100% - 40px),
+        1000px
+    );
+
+    margin-inline: auto;
+}
+
+.download-category {
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+}
+
+.download-category.open {
+    border-color:
+        rgba(227, 38, 46, 0.3);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+
+/* زر القسم */
+
+.download-category-btn {
+    width: 100%;
+
+    min-height: 75px;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    text-align: right;
+
+    transition: 0.25s ease;
+}
+
+.download-category-btn:hover {
+    color: var(--red);
+
+    background: #fffafa;
+}
+
+
+/* علامة + / - */
+
+.category-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition: 0.25s ease;
+}
+
+.download-category.open .category-icon {
+    background: var(--red);
+}
+
+
+/* قائمة التنزيلات */
+
+.download-items {
+    max-height: 0;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    padding-inline: 20px;
+
+    transition:
+        max-height 0.4s ease,
+        padding-bottom 0.4s ease;
+}
+
+.download-category.open .download-items {
+    padding-bottom: 20px;
+}
+
+
+/* بطاقة التنزيل */
+
+.download-card {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 18px;
+
+    overflow: hidden;
+
+    padding: 15px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    transition: 0.25s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(227, 38, 46, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.download-card > img {
+    width: 150px;
+    height: 115px;
+
+    object-fit: cover;
+
+    border-radius: 11px;
+}
+
+.download-info {
+    min-width: 0;
+}
+
+.download-number {
+    display: inline-block;
+
+    margin-bottom: 3px;
+
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+.download-info h3 {
+    margin-bottom: 4px;
+
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+.download-info p {
+    margin-bottom: 10px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+
+/* زر التنزيل */
+
+.download-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 35px;
+
+    padding: 0 13px;
+
+    border-radius: 8px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.download-btn:hover {
+    background: var(--red);
+
+    transform: translateY(-2px);
+}
+
+
+/* زر المفضلة */
+
+.favorite-btn {
+    display: block;
+
+    margin-top: 7px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777777;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.favorite-btn:hover {
+    color: var(--red);
+}
+
+.favorite-btn.is-favorite {
+    color: var(--red);
+
+    font-weight: 900;
+}
+
+
+/* Hero التنزيلات */
+
+.downloads-hero {
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   14. صفحات تسجيل الدخول وإنشاء الحساب
+   ملاحظة:
+   كل هذه القواعد تبدأ بـ .auth-page
+   لذلك لا تؤثر على الصفحة الرئيسية.
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    margin: 0;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family:
+        "Noto Kufi Arabic",
+        sans-serif;
+}
+
+
+/* زر العودة */
+
+.auth-page .auth-back {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.auth-page .auth-back:hover {
+    background: #111111;
+
+    color: #ffffff;
+
+    border-color: #111111;
+
+    transform: translateY(-2px);
+}
+
+
+/* الحاوية */
+
+.auth-page .auth-container {
+    width: min(1100px, 92%);
+
+    min-height: 750px;
+
+    margin: 0 auto;
+
+    padding: 90px 0 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* القسم التعريفي */
+
+.auth-page .auth-intro {
+    position: relative;
+
+    text-align: right;
+}
+
+
+/* الخط الأحمر */
+
+.auth-page .auth-intro::before {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 5px;
+
+    margin-bottom: 25px;
+
+    background: var(--red);
+
+    border-radius: 20px;
+}
+
+
+/* شعار GHOST */
+
+.auth-page .auth-logo {
+    margin-bottom: 25px;
+
+    color: var(--red);
+
+    font-size: 34px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* العنوان الرئيسي */
+
+.auth-page .auth-intro h1 {
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    line-height: 1.6;
+}
+
+
+/* النص */
+
+.auth-page .auth-intro p {
+    max-width: 520px;
+
+    margin: 0 0 30px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 2.2;
+}
+
+
+/* الصورة */
+
+.auth-page .auth-image {
+    width: 100%;
+
+    max-width: 500px;
+
+    display: block;
+
+    border-radius: 22px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s ease;
+}
+
+.auth-page .auth-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   صندوق تسجيل الدخول / إنشاء الحساب
+   ========================================================= */
+
+.auth-page .auth-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 24px;
+
+    padding: 42px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+
+/* الخط الأحمر أعلى الصندوق */
+
+.auth-page .auth-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 35px;
+    left: 35px;
+
+    height: 4px;
+
+    background: var(--red);
+
+    border-radius:
+        0 0 10px 10px;
+}
+
+
+/* رأس الصندوق */
+
+.auth-page .auth-box-header {
+    margin-bottom: 30px;
+}
+
+.auth-page .auth-small-label {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.auth-page .auth-box-header h2 {
+    margin: 0 0 10px;
+
+    color: #111111;
+
+    font-size: 27px;
+
+    font-weight: 900;
+}
+
+.auth-page .auth-box-header p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   النموذج
+   ========================================================= */
+
+.auth-page .auth-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.auth-page .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.auth-page .form-group label {
+    color: #222222;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* حقول الإدخال */
+
+.auth-page .form-group input {
+    width: 100%;
+
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 13px 16px;
+
+    background: #fafafa;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 13px;
+
+    color: #111111;
+
+    font-family:
+        "Noto Kufi Arabic",
+        sans-serif;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.auth-page .form-group input:hover {
+    border-color: #bbbbbb;
+}
+
+.auth-page .form-group input:focus {
+    background: #ffffff;
+
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 0 4px rgba(227, 38, 46, 0.08);
+}
+
+.auth-page .form-group input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* =========================================================
+   الزر الأساسي
+   تسجيل الدخول / إنشاء الحساب
+   ========================================================= */
+
+.auth-page .auth-submit {
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 5px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: var(--red);
+
+    color: #ffffff;
+
+    font-family:
+        "Noto Kufi Arabic",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(227, 38, 46, 0.20);
+
+    transition: 0.25s ease;
+}
+
+.auth-page .auth-submit:hover {
+    background: var(--red-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(227, 38, 46, 0.28);
+}
+
+.auth-page .auth-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   رسالة الخطأ / النجاح
+   ========================================================= */
+
+.auth-page .auth-message {
+    padding: 12px 15px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.auth-page .auth-message.error {
+    background: #fff1f1;
+
+    color: #b9141b;
+
+    border: 1px solid #ffd0d0;
+}
+
+.auth-page .auth-message.success {
+    background: #effbf3;
+
+    color: #18733a;
+
+    border: 1px solid #c8ecd4;
+}
+
+
+/* =========================================================
+   الفاصل
+   ========================================================= */
+
+.auth-page .auth-divider {
+    position: relative;
+
+    margin: 27px 0 15px;
+
+    text-align: center;
+
+    color: #999999;
+
+    font-size: 11px;
+}
+
+.auth-page .auth-divider::before,
+.auth-page .auth-divider::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 28%;
+
+    height: 1px;
+
+    background: #e5e5e5;
+}
+
+.auth-page .auth-divider::before {
+    right: 0;
+}
+
+.auth-page .auth-divider::after {
+    left: 0;
+}
+
+
+/* =========================================================
+   الزر الثاني
+   إنشاء حساب / تسجيل الدخول
+   ========================================================= */
+
+.auth-page .create-account-btn {
+    width: 100%;
+
+    min-height: 54px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 20px;
+
+    border: 2px solid #111111;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-family:
+        "Noto Kufi Arabic",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.auth-page .create-account-btn:hover {
+    background: #111111;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.auth-page .create-account-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ملاحظة الخصوصية
+   ========================================================= */
+
+.auth-page .auth-privacy {
+    margin: 20px 0 0;
+
+    color: #999999;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    line-height: 2;
+}
+
+
+/* Footer صفحات الحساب */
+
+.auth-page .auth-footer {
+    padding: 25px;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #fafafa;
+
+    color: #999999;
+
+    text-align: center;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   15. Responsive - الشاشات المتوسطة
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .hero-container {
+        grid-template-columns:
+            1fr 0.75fr;
+
+        gap: 45px;
+    }
+
+    .section-container {
+        gap: 45px;
+    }
+
+    .works-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   16. Responsive - الهاتف
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* التنزيلات */
+
+    .download-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    /* Navbar */
+
+    .nav-container {
+        min-height: auto;
+
+        padding: 15px 0;
+
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 4px;
+
+        gap: 22px;
+
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        white-space: nowrap;
+    }
+
+    .nav-account {
+        margin-right: auto;
+    }
+
+    .login-btn,
+    .register-btn {
+        min-height: 38px;
+
+        padding: 0 12px;
+
+        font-size: 10px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 60px 0 80px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-inline: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: min(100%, 430px);
+    }
+
+
+    /* الأقسام */
+
+    .about-section,
+    .visual-section,
+    .works-section,
+    .final-section {
+        padding: 80px 0;
+    }
+
+    .section-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .visual-content {
+        order: 2;
+
+        text-align: center;
+    }
+
+    .visual-image {
+        order: 1;
+    }
+
+    .section-content {
+        text-align: center;
+    }
+
+    .text-link {
+        margin-top: 5px;
+    }
+
+
+    /* الأعمال */
+
+    .works-grid {
+        grid-template-columns: 1fr;
+
+        width: min(
+            calc(100% - 40px),
+            500px
+        );
+    }
+
+    .section-heading {
+        width: min(
+            calc(100% - 40px),
+            600px
+        );
+    }
+
+
+    /* صفحات Login / Register */
+
+    .auth-page .auth-container {
+        width: 92%;
+
+        min-height: auto;
+
+        padding: 40px 0 60px;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .auth-page .auth-intro {
+        text-align: center;
+    }
+
+    .auth-page .auth-intro::before {
+        margin-inline: auto;
+
+        margin-bottom: 20px;
+    }
+
+    .auth-page .auth-image {
+        margin-inline: auto;
+    }
+
+    .auth-page .auth-intro h1 {
+        font-size: 30px;
+    }
+
+    .auth-page .auth-box {
+        padding: 30px 22px;
+    }
+
+    .auth-page .auth-back {
+        position: static;
+
+        margin: 20px;
+    }
+}
+
+
+/* =========================================================
+   17. Responsive - التنزيلات
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .downloads-section {
+        padding: 70px 0;
+    }
+
+    .download-category-btn {
+        min-height: 65px;
+
+        padding: 0 18px;
+
+        font-size: 13px;
+    }
+
+    .category-icon {
+        width: 33px;
+        height: 33px;
+
+        font-size: 17px;
+    }
+
+    .download-card {
+        grid-template-columns:
+            105px 1fr;
+
+        gap: 12px;
+
+        padding: 11px;
+    }
+
+    .download-card > img {
+        width: 105px;
+        height: 100px;
+    }
+
+    .download-info h3 {
+        font-size: 13px;
+    }
+
+    .download-info p {
+        font-size: 9px;
+    }
+
+    .download-btn {
+        min-height: 32px;
+
+        padding: 0 10px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   18. Responsive - الهواتف الصغيرة
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .nav-account {
+        gap: 5px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 0 9px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .final-container {
+        padding: 55px 20px;
+    }
+
+
+    /* Login / Register */
+
+    .auth-page .auth-container {
+        width: 94%;
+    }
+
+    .auth-page .auth-intro h1 {
+        font-size: 25px;
+    }
+
+    .auth-page .auth-box {
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+    .auth-page .auth-box-header h2 {
+        font-size: 23px;
+    }
+
+    .auth-page .form-group input {
+        min-height: 50px;
+
+        padding: 13px;
+    }
+
+    .auth-page .auth-submit,
+    .auth-page .create-account-btn {
+        min-height: 52px;
+
+        font-size: 13px;
+    }
+
+
+    /* Download cards */
+
+    .download-card {
+        grid-template-columns: 1fr;
+    }
+
+    .download-card > img {
+        width: 100%;
+
+        height: 160px;
+    }
+}
+
+
+/* =========================================================
+   19. الهواتف الصغيرة جداً
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav-account {
+        gap: 4px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 0 8px;
+
+        font-size: 9px;
+    }
+
+    .auth-page .auth-box {
+        padding: 22px 15px;
+    }
+}
+
